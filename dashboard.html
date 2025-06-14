@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة التحكم - ويلهوست</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="ويلهوست.jpg" type="image/jpg">
+  <!-- Chart.js للرسم البياني البسيط -->
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- 🟦 الشريط العلوي -->
+  <div id="header"></div>
+
+  <!-- 📊 لوحة التحكم -->
+  <section class="dashboard">
+    <h1>لوحة تحكّم المالك</h1>
+
+    <!-- بطاقات الإحصاءات السريعة -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>الحجوزات اليوم</h3>
+        <p class="stat-value" id="today-bookings">12</p>
+      </div>
+      <div class="stat-card">
+        <h3>نسبة الإشغال</h3>
+        <p class="stat-value" id="occupancy-rate">83%</p>
+      </div>
+      <div class="stat-card">
+        <h3>أرباح هذا الشهر</h3>
+        <p class="stat-value" id="monthly-revenue">‏14٬250 ر.س</p>
+      </div>
+      <div class="stat-card">
+        <h3>تنبيهات الصيانة</h3>
+        <p class="stat-value" id="maintenance-alerts">3</p>
+      </div>
+    </div>
+
+    <!-- رسم بياني بسيط للإشغال -->
+    <div class="chart-wrapper">
+      <canvas id="occupancyChart" aria-label="نسبة الإشغال الأسبوعية" role="img"></canvas>
+    </div>
+  </section>
+
+  <!-- ⬛ الشريط السفلي -->
+  <div id="footer"></div>
+
+  <!-- استدعاء الهيدر والفوتر + تهيئة الرسم البياني -->
+  <script>
+    // تحميل الشريط العلوي والسفلي
+    window.addEventListener('DOMContentLoaded', () => {
+      Promise.all([
+        fetch('header.html').then(r => r.text()),
+        fetch('footer.html').then(r => r.text())
+      ]).then(([headerHTML, footerHTML]) => {
+        document.getElementById('header').innerHTML = headerHTML;
+        document.getElementById('footer').innerHTML = footerHTML;
+      });
+
+      // بيانات تجريبية للرسم البياني
+      const ctx = document.getElementById('occupancyChart');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'],
+          datasets: [{
+            label: 'نسبة الإشغال',
+            data: [75, 78, 80, 85, 87, 82, 83],
+            fill: false,
+            tension: 0.3
+          }]
+        },
+        options: {
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: { beginAtZero: true, max: 100 }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
