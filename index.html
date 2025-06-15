@@ -2,71 +2,197 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ويلهوست | إدارة عقارك بذكاء</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="ويلهوست.jpg" type="image/jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a4365;
+      --primary-light: #4299e1;
+      --secondary: #f6ad55;
+      --dark: #1a202c;
+      --light: #f7fafc;
+      --gray: #e2e8f0;
+      --font: 'Tajawal', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--dark);
+        width: 100%;
+        padding: 1rem;
+      }
+      nav.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+  <!-- ✅ Header -->
+  <header>
+    <div class="logo">
+      <img src="welhostv.png" alt="شعار ويلهوست">
+      ويلهوست
+    </div>
+    <i class="fas fa-bars hamburger" id="hamburger"></i>
+    <nav id="nav">
+      <a href="#about">من نحن</a>
+      <a href="#services">الخدمات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
 
-  <!-- 🟦 الشريط العلوي سيتم تحميله -->
-  <div id="header"></div>
-
-  <!-- 💡 البانر الرئيسي -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="ويلهوست.jpg" alt="شعار ويلهوست" class="hero-logo">
-      <h1>ويلهوست</h1>
-      <p class="slogan">إدارة عقارك بذكاء</p>
-      <a href="#services" class="btn-primary">استعرض خدماتنا</a>
+  <!-- ✅ Hero -->
+  <section class="hero" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white;">
+    <div class="container">
+      <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">إدارة عقارك بذكاء</h1>
+      <p style="font-size: 1.2rem; opacity: 0.9;">سهولة، كفاءة، وتحكم كامل</p>
     </div>
   </section>
 
-  <!-- ℹ️ من نحن -->
-  <section class="about">
+  <!-- ✅ About -->
+  <section id="about">
     <h2>من نحن</h2>
-    <p>ويلهوست هي منصة رقمية لإدارة الشقق السياحية والمرافق بخدمات ذكية مثل المزامنة مع Airbnb و Booking وإدارة الفرق.</p>
+    <p>ويلهوست منصة حديثة لإدارة الشقق والوحدات العقارية من خلال لوحات تحكم سهلة ومتكاملة.</p>
   </section>
 
-  <!-- 🧰 الخدمات -->
-  <section class="services" id="services">
+  <!-- ✅ Services -->
+  <section id="services">
     <h2>خدماتنا</h2>
-    <div class="service-list">
-      <div class="service">
-        <h3>إدارة الحجوزات</h3>
-        <p>نظام موحد لتحديث وتأكيد الحجوزات من جميع المنصات.</p>
-      </div>
-      <div class="service">
-        <h3>بوابة الملاك</h3>
-        <p>لوحة تحكم فورية تعرض الأرباح والإحصاءات.</p>
-      </div>
-      <div class="service">
-        <h3>إدارة الصيانة</h3>
-        <p>تنظيم مهام التنظيف والملاحظات والبلاغات اليومية.</p>
-      </div>
+    <p>إدارة الحجوزات، التقارير، التنبيهات، والتكامل مع المنصات العالمية.</p>
+  </section>
+
+  <!-- ✅ Contact -->
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+    <p>📧 info@wailhost.com | ☎️ +966 12 345 6789</p>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#about">عنّا</a>
+      <a href="#services">الخدمات</a>
+      <a href="#contact">الدعم</a>
     </div>
-  </section>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+    <p>&copy; 2025 ويلهوست. جميع الحقوق محفوظة.</p>
+  </footer>
 
-  <!-- ⭐ شهادات العملاء -->
-  <section class="testimonials">
-    <h2>آراء العملاء</h2>
-    <blockquote>
-      "أفضل منصة استخدمناها منذ سنوات، خدمة ذكية وسهلة." - م. فيصل
-    </blockquote>
-  </section>
-
-  <!-- ⬛ الشريط السفلي سيتم تحميله -->
-  <div id="footer"></div>
-
-  <!-- 🧠 JavaScript: استدعاء الشريط العلوي والسفلي -->
+  <!-- ✅ JavaScript -->
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      fetch('header.html')
-        .then(response => response.text())
-        .then(html => document.getElementById('header').innerHTML = html);
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
 
-      fetch('footer.html')
-        .then(response => response.text())
-        .then(html => document.getElementById('footer').innerHTML = html);
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
     });
   </script>
 </body>
