@@ -154,3 +154,21 @@ html {
   background-color: #0199ab;
   text-decoration: none;
 }
+.btn-return {
+  display: inline-block;
+  padding: 0.7em 2em;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1b3a57;
+  border: 2px solid #1b3a57;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-return:hover {
+  background-color: #1b3a57;
+  color: white;
+  text-decoration: none;
+}
