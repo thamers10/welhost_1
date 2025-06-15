@@ -521,6 +521,27 @@
       margin-right: 0.5rem;
     }
 
+    /* Video Section */
+    .video-section {
+      padding: 5rem 1rem;
+      background-color: var(--light);
+      text-align: center;
+    }
+
+    .video-container {
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* Contact Section */
     .contact {
       padding: 5rem 1rem;
@@ -932,11 +953,10 @@
         <a href="#features">المميزات</a>
         <a href="#about">من نحن</a>
         <a href="#services">الخدمات</a>
+        <a href="#video">فيديو المنصة</a>
         <a href="#contact">تواصل معنا</a>
         <a href="#" class="cta-button">تجربة المنصة</a>
         <a href="payment-methods.html" class="cta-button">💳 طرق الدفع</a>
-
-
       </nav>
       <div class="overlay" id="overlay"></div>
     </div>
@@ -1042,6 +1062,22 @@
             <a href="#" class="service-link">المزيد <i class="fas fa-arrow-left"></i></a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Video Section -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>فيديو تعريفي عن المنصة</h2>
+        <p>شاهد كيف يمكن لمنصة ويلهوست مساعدتك في إدارة عقارك بكل سهولة</p>
+      </div>
+      <div class="video-container fade-in delay-1">
+        <video width="100%" controls poster="video-poster.jpg">
+          <source src="vid.mp4" type="video/mp4">
+          متصفحك لا يدعم تشغيل الفيديو.
+        </video>
       </div>
     </div>
   </section>
@@ -1167,8 +1203,8 @@
             <li><a href="#features">المميزات</a></li>
             <li><a href="#about">عن الشركة</a></li>
             <li><a href="#services">الخدمات</a></li>
+            <li><a href="#video">فيديو المنصة</a></li>
             <li><a href="#contact">تواصل معنا</a></li>
-            <li><a href="#">الأسئلة الشائعة</a></li>
           </ul>
         </div>
         <div class="footer-links">
@@ -1186,11 +1222,6 @@
           <div class="footer-contact-item">
             <div class="footer-contact-icon">
               <i class="fas fa-map-marker-alt"></i>
-              
-    </ul>
-  </div>
-</section>
-
             </div>
             <div>العلا، المملكة العربية السعودية</div>
           </div>
@@ -1287,6 +1318,4 @@
     window.addEventListener('scroll', fadeInOnScroll);
   </script>
 </body>
-
-
 </html>
